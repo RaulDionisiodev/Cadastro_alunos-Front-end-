@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-header">
+    <div class="float-left">Lista de alunos</div>
+
+    <div class="float-right">
+      <button type="button" class="btn btn-primary"[routerLink]="['novo']" >Novo Aluno</button>
+    </div>
+
+  </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Serie</th>
+          <th scope="col">Data de Nascimento</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <tr *ngFor="let aluno of alunos;">
+              <td>{{aluno.id}}</td>
+              <td>{{aluno.nome}}</td>
+              <td>{{aluno.serie}}</td>
+              <td>{{aluno.nascimento}}</td>
+              <td><button type="button" class="btn btn-primary" [routerLink]="['detalhes/'+aluno.id]" >Detalhes</button></td>
+              <td><button type="button" class="btn btn-warning" [routerLink]="['novo']" >Editar</button></td>
+              <td><button type="button" class="btn btn-danger" >Remover</button></td>
+      </tbody>
+</table>
